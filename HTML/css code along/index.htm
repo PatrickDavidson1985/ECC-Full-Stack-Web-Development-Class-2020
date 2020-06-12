@@ -20,23 +20,37 @@
 
         Nav a {
             color:white;
-            font-size: 1.5em;
+            font-size: 1.2em;
             text-align: center;
-            padding: 15px 15px;
+            padding: 12px 30px;
             float: left;
-            
+            text-decoration: none;
+
+
 
 
 
 
         }
 
+        nav.dropdown {
+            float:left;
+            text-align:center;
+        }
+
     </style>
 </head>
 <body>
     <nav>
-       <a href="home">Home </a>
-       <a href="news">News </a>
+    <a href="home">Home </a>
+    <div class="dropdown">
+           <button>News</button>
+           <div class="dropdown-content">
+                <a href="">Blog</a>
+                <a href="">Press Releases</a>
+                <a href="">Archive</a>  
+           </div>
+    </div>
        <a href="Shop">Shop </a>
        <a href="About Us">About Us</a>
        <a href="Contact Us">Contact Us</a>
