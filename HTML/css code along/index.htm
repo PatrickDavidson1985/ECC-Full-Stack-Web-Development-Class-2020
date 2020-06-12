@@ -46,14 +46,33 @@
 
         }
 
-        nav .dropdown .dropdown-content {
+        nav .dropdown:hover a:hover {
+            background-color:#0000aa;
+
+        } 
+
+       nav .dropdown .dropdown-content {
             display:none;
-        }
+       } 
 
         nav .dropdown button:hover{ cursor:pointer;
 
         }
 
+        nav .dropdown:hover .dropdown-content { display:block
+        position:absolute;
+        top:50px;
+        background-color: blue;
+
+        }
+
+        nav .dropdown .dropdown-content a { 
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+            
+
+        }
 
     </style>
 </head>
