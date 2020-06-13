@@ -66,6 +66,12 @@ body {
   }
   /* END Paywall Notice */
 
+  /*author byline*/
+
+  .author-byline img{
+      border-radius: 50%
+  }
+
   /* Main */
   .mx-1 figure img {
     max-width: ;
@@ -74,9 +80,16 @@ body {
   /*footer*/
 footer {
     background-color: black  ;
+    padding: 2rem;
     
-  
-}
+  }
+
+  footer p {
+      text-decoration: none;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+  }
 
   /* Modifiers */
   .mx-1 {
