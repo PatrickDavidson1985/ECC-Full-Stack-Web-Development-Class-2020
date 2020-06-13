@@ -65,11 +65,24 @@ body {
     padding: 0.75rem;
   }
   /* END Paywall Notice */
+
+  /* Main */
+  .mx-1 figure img {
+    max-width: ;
+  }
+
+  /*footer*/
+footer {
+    background-color: black  ;
+    
   
+}
+
   /* Modifiers */
   .mx-1 {
     margin-right: 1.25rem;
     margin-left: 1.25rem;
+    
   }
   
   /* Desktop Media Queries */
@@ -79,7 +92,10 @@ body {
       max-width: 52rem;
       margin: 0 auto;
     }
-  }
+    article figure img {
+        max-width: 30rem;
+    }
+}
   /* viewport = immediate visible width and the height of the DOM/window
             what you are currently observing as the user
             (dimensions) */
