@@ -68,8 +68,10 @@ body {
 
   /*author byline*/
 
-  .author-byline img{
-      border-radius: 50%
+  header .author-byline img{
+      border-radius: 50%;
+      max-width: 5rem;
+    
   }
 
   /* Main */
