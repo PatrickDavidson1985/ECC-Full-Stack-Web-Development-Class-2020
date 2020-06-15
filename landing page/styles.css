@@ -3,5 +3,9 @@
     margin: 0;
 }
 
-header {
-background-image: url(./images/hunter-johnson-IwPehLEyFKM-unsplash.jpg);}
+ header {
+background: url('./images/hunter-johnson-IwPehLEyFKM-unsplash.jpg');
+background-position: center;
+background-size: cover;
+min-height: 30rem;
+}
