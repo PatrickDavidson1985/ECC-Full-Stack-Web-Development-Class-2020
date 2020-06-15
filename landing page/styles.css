@@ -1,0 +1,8 @@
+/*landing page styles*/
+* {
+    margin: 0;
+}
+
+header {
+    background: url('./images/hunter-johnson-IwPehLEyFKM-unsplash.jpg');
+}
