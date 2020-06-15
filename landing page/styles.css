@@ -22,6 +22,11 @@ color: white;
 
 }
 
+.body p {
+    max-width: 80%;
+    background-position: center;
+}
+
 article {
     max-width: 30rem;
 }
