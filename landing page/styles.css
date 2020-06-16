@@ -22,11 +22,17 @@ color: white;
 
 }
 
-.body p {
+body p {
     max-width: 80%;
     background-position: center;
 }
 
 article {
     max-width: 30rem;
+}
+
+#signup-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
 }
