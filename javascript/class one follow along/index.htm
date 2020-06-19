@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function hello_world() {
-            var hello = "hello";
-            alert (hello_string);
+        function hello_world(name) {
+            var hello = "hello world" + name;
+            alert (hello);
         }
+        hello_world("Monica");
+        hello_world("Bill")
     </script>
 </head>
 <body>
