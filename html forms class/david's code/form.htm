@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First Form</title>
+
+        <!-- <script>
+        function show() {
+            alert(document.forms[0].password.value);
+        }
+        </script> -->
+
+        <style>
+            body {
+                margin:0;
+                padding:0;
+                vertical-align: center;
+            }
+            #container {
+                margin:auto;
+                vertical-align: center;
+            }
+            form {
+                text-align: center;
+            }
+            input[type='text'], input[type='password'] {
+                width:200px;
+                margin: 20px;
+                padding: 6px;
+            }
+            input[type='submit'] {
+                padding:6px;
+                margin-top:10px;
+                width:100px;
+            }
+            #logo {
+                background-image: url("images/1_emiGsBgJu2KHWyjluhKXQw.png");
+                width:175px;
+                height:175px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="logo"></div>
+            <form action="#" method="POST">
+                <input type="text" name="username" autocomplete="off" placeholder="Username" tabindex="1">
+                <br>
+                <input type="password" name="password" placeholder="Password" tabindex="2"> <!-- onBlur="show()"> -->
+                <br>
+                <input type="submit" name="submit" tabindex="3">
+            </form>
+        </div>
+    </body>
+</html>
