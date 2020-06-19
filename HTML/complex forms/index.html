@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #page1 {
+            display: inline;
+        }
+
+        #page2 {
+            display: none;
+        }
+    </style>
+    <script>
+    //    function change() {
+     //       document.forms[0].getElemntByID('page1').style.display = 'none';
+       //     document.forms[0].getElemntByID('page2').style.display = 'inline';
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#" method="POST">
+
+        <div id="page1">
+            <input type="text" name="firstname" placeholder="First Name">
+            <input type="text" name="lastname" placeholder="Last Name">
+            <input type="text" name="address" placeholder="Street Address">
+            <input type="text" name="city" placeholder="City">
+            <input type="text" name="state" placeholder="State">
+            <input type="number" name="Zip Code" placeholder="Zip Code">
+            <input type="button" name="next" value="Next" onClick="change()" maxlength="5">
+
+            <input type="text" name="Zip Code" placeholder="Zip Code">
+            <input type="email" name="email" placeholder="Email Address">
+            <input type="tel" name="phone" placeholder="Phone Number">
+        </div>
+        <div id="page2">
+            <input type="text" autocomplete="cc-number" name="ccnum">
+            <input type="text" autocomplete="cc-exp" name="ccexp">
+            <input type="text" autocomplete="cc-csc" name="cccvv">
+            <input type="text" autocomplete="cc-name" name="ccname">
+
+            <input type="hidden" name="amount" value="10.00">
+
+            <input type="button" name="previous" value="Previous" onClick="change2()">
+            <input type="submit" name="submit" value="Subscribe">
+            <!-- <input type="image" src="" alt=""> -->
+        </div>
+    </form>
+
+</body>
+
+</html>

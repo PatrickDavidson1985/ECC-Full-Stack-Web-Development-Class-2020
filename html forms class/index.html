@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            margin: auto;
+            vertical-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        input[type='text'],input[type='password'] {
+            width:200px;
+            margin: 20px;
+            padding: 6px;
+        }
+        input[type='submit'] {
+            padding: 6px;
+            margin-top: 10px;
+            width: 100px;
+        }
+        #logo {
+            background-image: url("images/medium.png");
+            width: 175px;
+            height: 175px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="logo"></div>
+        <form action="#" method="POST">
+            <input type="text" name="username" autocomplete="off" placeholder="username" tabindex="1">
+            <br>
+            <input type="password" name="password" onblur="show()" placeholder="password" tabindex="2">
+            <br>
+
+            <input type="submit" name="submit" tabindex="3">
+
+            <input type="tel" name="phone">
+            
+            <input type="file">
+
+            <input type="date">
+        </form>
+    </div>
+</body>
+
+</html>
