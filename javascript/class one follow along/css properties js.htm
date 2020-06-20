@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        This is
+    </p>
+    <p id="main" style="visibility: hidden;"> Invisible</p>
+    <script>
+        function visible() {
+            var x = document.getElementById("main");
+            x.style.visibility = "hidden";
+            return true;
+        }
+        visible();
+    </script>
+
+</body>
+
+</html>
