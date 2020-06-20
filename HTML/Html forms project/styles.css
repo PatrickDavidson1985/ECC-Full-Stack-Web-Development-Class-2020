@@ -9,11 +9,16 @@ body {
 #container {
     display: block;
     text-align: center;
+    
 }
 
 form {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
     text-align: left;
+background-image: url(images/15768.png); 
+border-radius: 25px;   
+    
 }
