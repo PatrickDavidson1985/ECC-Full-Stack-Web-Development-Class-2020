@@ -7,12 +7,40 @@
     <title>Document</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
-<script>
+    <script>
+        function show1() {
+            document.getElementById('page1').style.display = 'inline';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'none';
+        }
 
-</script>
+        function show2() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'inline';
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'none';
+        }
+
+        function show3() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'inline';
+            document.getElementById('page4').style.display = 'none';
+        }
+
+        function show4() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'inline';
+        }
+
+
+    </script>
 </head>
 <!--photo credit below -->
-<!--<span>Photo by <a href="https://unsplash.com/@marvelous?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Marvin Meyer</a> on <a href="/s/photos/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>-->
+
 
 <body>
     <div id="container">
@@ -21,22 +49,23 @@
                 <p> Thank you for visiting! Enter your information below!</p>
                 <input type="text" name="firstname" placeholder="First Name">
                 <input type="text" name="lastname" placeholder="Last Name">
-                
+                <Button name="next" value="next" onclick="show2()">Proceed!</Button>
+
 
             </div>
             <div id="page2">
                 <input type="email" name="email" placeholder="E-mail">
-                <button>Submit</button>
+                <button name="next" value="next" onclick="show3()">Submit</button>
             </div>
             <div id="page3">
                 <input type="checkbox"> I need a website<br>
                 <input type="checkbox"> I need a domain<br>
                 <input type="checkbox"> I need something else<br>
-                <Button>Submit</Button>
+                <Button name="next" value="next" onclick="show4()">Submit</Button>
             </div>
             <div id="page4">
                 <input type="text" name="comments" placeholder="Comments">
-                <button>Submit</button>
+                <button name="next" value="next" onclick="show1()">Submit</button>
 
 
 
@@ -45,5 +74,10 @@
         </form>
     </div>
 </body>
-
+<footer>
+    <span>Photo by <a
+        href="https://unsplash.com/@marvelous?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Marvin
+        Meyer</a> on <a
+        href="/s/photos/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+</footer>
 </html>
