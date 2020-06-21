@@ -1,3 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    vertical-align: center;
+    background-image: url(images/marvin-meyer-SYTO3xs06fU-unsplash.jpg);
+    background-size: cover;
+}
+
+#container {
+    display: block;
+    text-align: center;
+    
 }
 #page1 {
     display:inline;
@@ -12,21 +24,6 @@
     display:none;
 }
 
-
-body {
-    margin: 0;
-    padding: 0;
-    vertical-align: center;
-    background-image: url(images/marvin-meyer-SYTO3xs06fU-unsplash.jpg);
-    background-size: cover;
-}
-
-#container {
-    display: block;
-    text-align: center;
-    
-
-
 form {
     display: inline-block;
     margin-left: auto;
@@ -34,6 +31,7 @@ form {
     margin-top: 100px;
     text-align: left;
 background-image: url(images/15768.png); 
+
 border-radius: 25px;
 opacity: .85;   
     
