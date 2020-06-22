@@ -34,3 +34,10 @@ console.log(number)
  * 5. log that math's value to the console
  * 6. separate your js file from your html file
  */
+
+
+ //camelCase
+ //snake_case
+ //PascalCase
+
+ 
