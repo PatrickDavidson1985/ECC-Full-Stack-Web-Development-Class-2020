@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <span>Photo by <a
+        href="https://unsplash.com/@marvelous?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Marvin
+        Meyer</a> on <a
+        href="/s/photos/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function show1() {
+            document.getElementById('page1').style.display = 'inline';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'none';
+        }
+
+        function show2() {
+            document.getElementById('page2').style.display = 'inline';
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'none';
+        }
+
+        function show3() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'inline';
+            document.getElementById('page4').style.display = 'none';
+        }
+
+        function show4() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'inline';
+        }
+
+
+    </script>
 </head>
+<!--photo credit below -->
+
+
 <body>
-    
+    <div id="container">
+        <form action="#" method="POST">
+            <div id="page1">
+                <p> Thank you for visiting! Enter your information below!</p>
+                <input type="text" name="firstname" placeholder="First Name">
+                <input type="text" name="lastname" placeholder="Last Name">
+                <input type="button" value="next" onclick="show2()" placeholder="Proceed" name="proceed">
+
+
+            </div>
+            <div id="page2">
+                <input type="email" name="email" placeholder="E-mail">
+                <input type="button" value="next" onclick="show3()" placeholder="Proceed" name="proceed">
+            </div>
+            <div id="page3">
+                <input type="checkbox"> I need a website<br>
+                <input type="checkbox"> I need a domain<br>
+                <input type="checkbox"> I need something else<br>
+                <input type="button" value="next" onclick="show4()" placeholder="Proceed" name="proceed">
+            </div>
+            <div id="page4">
+                <input type="text" name="comments" placeholder="Comments">
+                <input type="button" value="next" onclick="show1()" placeholder="Proceed" name="proceed">
+
+
+
+
+
+        </form>
+    </div>
 </body>
+
+
 </html>
