@@ -36,7 +36,7 @@ addTodoButton.addEventListener('click', function () {
 //generate todo list element <li>
 function generateTodo(todo){
     const task = document.createElement('li');
-    const taskText = documnt.createElement('span');
+    const taskText = document.createElement('span');
     const checkbox = document.createElement('input'); 
     const deleteButton = document.createElement('button');
 //checkbox
@@ -52,7 +52,7 @@ task.appendChild(taskText);
  return task;
 }
 
-
+todoList.appendChild(generateTodo('__test__'))
 //
 
 
