@@ -1,7 +1,7 @@
 console.log('In todo.js!');
 
 //selectors
-let todoInput = document.getElementById('todoinput');
+let todoInput = document.getElementById('todoInput');
 let addTodoButton = document.querySelector('#addTodoButton');
 
 //console.log('todo input field:', todoInput);
