@@ -14,16 +14,25 @@ const todos = ['Static Test Todo'];
 
 //JS addEventListener Method: Add an event listener to html element that has been selected in js
 //anon function: finction is not defined elsewhere in the codebase, and it call immediately within the arg,
-addTodoButton.addEventListener('click', function(){
+addTodoButton.addEventListener('click', function () {
     //get the todoInput value
-    let todoItemText = todoInput.value;
-    
-    console.log(todos)
-   //push the todo input value to the todos array
-    todos.push(todoInput.value);
-    console.log(todos)
+    let todoValue = todoInput.value;
+
+
+    //sanitize trim = removing trailing and preceding whitespace
+    todoValue.trim();
+
+    //push the todo input value to the todos array
+    if (todoInput.value !== '') {
+        todos.push(todoInput.value);
+        console.log(todos)
+    } else {
+        //modify the input element to have border red
+        todoInput.style.border = '1px solid red';
+        alert('You can\'t submit an empty value.');
+    }
 })
-})
+
 
 
 //
