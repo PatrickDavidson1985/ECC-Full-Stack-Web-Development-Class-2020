@@ -45,9 +45,11 @@ checkbox.setAttribute('type', 'checkbox');
 // Instert text 
 taskText.innerText = todo;
 //Build the task item
+
+task.appendChild(checkbox);
 task.appendChild(taskText);
 
- task.appendChild(checkbox);
+ 
 
  return task;
 }
