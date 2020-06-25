@@ -47,7 +47,9 @@ taskText.innerText = todo;
 //Build the task item
 task.appendChild(taskText);
 
-return task.appendChild(checkbox);
+ task.appendChild(checkbox);
+
+ return task;
 }
 
 
