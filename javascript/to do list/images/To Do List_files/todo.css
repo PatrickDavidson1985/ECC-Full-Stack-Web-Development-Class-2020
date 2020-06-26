@@ -11,7 +11,6 @@ body {
 
 }  
 
-body 
 @media only screen and (max-width:767px){
     body{
         background-image: url(images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg);

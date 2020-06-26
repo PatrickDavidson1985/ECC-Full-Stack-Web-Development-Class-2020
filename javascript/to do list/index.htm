@@ -7,26 +7,31 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="todo.css">
-    <span>Photo by <a href="https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn Carstens-Peters</a> on <a href="/s/photos/list?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span><br>
+    <span>Photo by <a
+            href="https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Glenn
+            Carstens-Peters</a> on <a
+            href="/s/photos/list?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span><br>
 </head>
 
 <body>
     <!--input-->
-    <input id="todoInput" type="text" placeholder="Add Todo">
-    <button id="addTodoButton">Add Todo </button>
+    <div id="container">
+        <input id="todoInput" type="text" placeholder="Add Todo">
+        <button id="addTodoButton">Add Todo </button>
 
-    <!--todo list display-->
-    <h2>Todo List</h2>
-    <ul id="todoList">
-        <!-- todo list items-->
-        <li>Here is a static todo (fixme!)</li>
-        <button>Delete</button>
-    
-        <!--Javascript injection here-->
-    </ul>
+        <!--todo list display-->
+        <h2>Todo List</h2>
+        <ul id="todoList">
+            <!-- todo list items-->
+            <li>Here is a static todo (fixme!)</li>
+            <button>Delete</button>
 
+            <!--Javascript injection here-->
+        </ul>
+    </div>
 
     <script src="todo.js"></script>
+    <script src="https://kit.fontawesome.com/62e1dfd1c9.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
