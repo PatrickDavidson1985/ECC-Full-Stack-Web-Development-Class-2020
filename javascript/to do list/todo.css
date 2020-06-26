@@ -1,3 +1,16 @@
 body {
-    background-color: #ccc;
+    margin: 0;
+    padding: 0;
+    background-image: url(images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+@media only screen and (max-width:767px){
+    body{
+        background-image: url(images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg);
+    }
 }
