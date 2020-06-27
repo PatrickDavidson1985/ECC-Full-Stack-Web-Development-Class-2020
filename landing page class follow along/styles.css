@@ -1,0 +1,90 @@
+/*landing page styles*/
+* {
+    margin: 0;
+}
+body{
+    background: url("./images/hunter-johnson-IwPehLEyFKM-unsplash.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+}
+ header {
+     /*background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52),
+     rgba(117, 19, 93, 0.73),
+     url();*/
+}
+
+#main,p {
+    text-align: center;
+    margin: 20px;
+    padding:20px;
+    background-color: white;
+    opacity: 75%;
+    border-radius :75px;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+.parralax div{
+    color: red;
+    border-width: 4px;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    background-color: white;
+    opacity: 75%;
+    
+}
+
+.parralax {
+
+
+
+
+align-items: center;
+
+
+margin-bottom: 20px;
+}
+body p {
+    max-width: 80%;
+    background-position: center;
+    
+}
+
+article {
+    max-width: 30rem;
+}
+
+/*#footer {
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    text-align: center;
+    margin: 5px;
+    padding: 20px;
+}
+*/
+#footer {
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    border: black;
+    border-style: solid;
+    margin-left: 20px;
+    
+    
+}
+
+
+
+@media only screen and (375px 812px) {
+    body{
+        background-image: url("./images/hunter-johnson-IwPehLEyFKM-unsplash.jpg");
+    }
+   
+} 
