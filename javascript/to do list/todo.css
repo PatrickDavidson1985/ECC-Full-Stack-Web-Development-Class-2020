@@ -4,13 +4,14 @@
     border-style: solid;
     text-align: center;
     justify-content: center;
+    padding:20px;
+    margin:20px;
+    
 }
 
-
-
 body {
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 20px;
     background-image: url(images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -18,6 +19,7 @@ body {
     background-size: cover;
     background-color: #464646;
     font-family: cursive;
+    
     
 
 }  
