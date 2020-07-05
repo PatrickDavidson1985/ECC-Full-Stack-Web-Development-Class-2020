@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            margin: 20px;
+        }
+        h1 {
+            margin:0;
+            padding: 0;
+        }
+p {
+    font-size: 35px;
+    color: orangered;
+    margin: 0;
+    padding: 0;
+/*put margin and padding at 0 to make h1 and p closer together*/
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 25%;
+  padding: 5px;
+
+}
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+/* decided to use the flex option from w3 schools instead of the float option*/
+    </style>
+</head>
+
+<body>
+    <h1>SUCCESSFUL</h1>
+    <p>FACULTY TEAM</p>
+
+    <!--
+        <div class="images">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+ -->
+ <div class="row">
+    <div class="column">
+      <img src="images/image 1.png" alt="image one " style="width:100%">
+    </div>
+    <div class="column">
+      <img src="images/image 2.png" a[t="image two" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="images/image 3.png" alt="image three" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="images/image 4.png" alt="image four" style="width:100%">
+      </div>
+  </div>
+  
+</body>
+
+</html>

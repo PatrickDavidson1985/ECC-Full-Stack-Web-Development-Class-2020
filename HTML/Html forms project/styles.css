@@ -4,11 +4,13 @@ body {
     vertical-align: center;
     background-image: url(images/marvin-meyer-SYTO3xs06fU-unsplash.jpg);
     background-size: cover;
+    
 }
 
 #container {
     display: block;
     text-align: center;
+    font-family: 'Oxygen', sans-serif;
     
 }
 #page1 {
@@ -30,9 +32,15 @@ form {
     margin-right: auto;
     margin-top: 100px;
     text-align: left;
+    padding: 20px;
 background-image: url(images/15768.png); 
 
 border-radius: 25px;
-opacity: .85;   
-    
+opacity: .85;  
 }
+    
+@media screen and (min-width: 375px) {
+    body {
+      
+    }
+  }
