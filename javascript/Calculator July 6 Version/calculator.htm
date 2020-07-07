@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            div#calculator {
+                float:left;
+                width:300px;
+            }
+            div#running-history{
+                float:left;
+                width:200px;
+                height:425px;
+                background-color:#D4D4D2;
+                font-size:24px;
+                padding:25px;
+            }
+            input {
+                width:260px;
+                height:55px;
+                background-color:#1c1c1c;
+                font-size: 40px;
+                color:#D4D4D2;
+                padding:0px 20px 0px 20px;
+                text-align:right;
+                border:none;
+            }
+            input#running-calc {
+                height:20px;
+                font-size:16px;
+                padding-top:25px;
+            }
+            button {
+                width:75px;
+                height:75px;
+                font-size:32px;
+                color:#D4D4D2;
+                background-color:#757575;
+                border:none;
+                border-right:1px solid #1c1c1c !important;
+                border-bottom:1px solid #1c1c1c !important;
+            }
+            button.funcs {
+                background-color:#505050;
+            }
+            button.ops {
+                background-color:#FF9500;
+                margin:0px;
+            }
+            button#zero {
+                width:150px;
+            }
+            button#C {
+                display:none;
+            }
+        </style>
+        <script>
+            // NOTE: Our JavaScript file is getting really long, this is why we would normally break
+            // it out into a separate file.
+
+            // this line of code runs as soon as the page loads (more on this in another class)
+            // it adds a document event listener that runs anytime a key is pressed.  If it's a key
+            // we care about, we run the calc() function, if not, we just ignore it.
+            document.addEventListener('keypress', function keyPress(e) {
+                switch (e.key) {
+                    case "1": 
+                        calc(1);
+                        break;
+                    case "2": 
+                        calc(2);
+                        break;
+                    case "3": 
+                        calc(3);
+                        break;
+                    case "4": 
+                        calc(4);
+                        break;
+                    case "5": 
+                        calc(5);
+                        break;
+                    case "6": 
+                        calc(6);
+                        break;
+                    case "7": 
+                        calc(7);
+                        break;
+                    case "8": 
+                        calc(8);
+                        break;
+                    case "9": 
+                        calc(9);
+                        break;
+                    case "0": 
+                        calc(0);
+                        break;
+                    case ".": 
+                        calc(".");
+                        break;
+                    case "%": 
+                        calc("%");
+                        break;
+                    case "+": 
+                        calc("+");
+                        break;
+                    case "-": 
+                        calc("-");
+                        break;
+                    case "/": 
+                        calc("/");
+                        break;
+                    case "*": 
+                        calc("*");
+                        break;
+                    case "Enter":
+                    case "=":
+                        calc("=");
+                        break;
+                    default: 
+                        break;
+                }
+            });
+
+            // initialize our base variables to their default values
+            var firstnum="";
+            var operator="";
+            var oper_was_last=false;
+            var should_we_perform_eq=false;
+
+            // initialize our history array to be an empty array
+            var history_array = [];
+
+            // this is the main function in our calculator function.
+            function calc(num) {
+
+                // grab the value of the "total" input box, which is our calculator main text box.
+                var total = String(document.getElementById("total").value);
+
+                // switch statement to handle the different button presses in our calculator
+                switch (num) {
+                    case "AC":
+                        // the all clear function, this resets all the values to their default
+                        // note that we don't clear the history
+                        firstnum="";
+                        operator="";
+                        oper_was_last=false;
+                        should_we_perform_eq=false;
+                        document.getElementById("total").value = "0";
+                        document.getElementById('running-calc').value = "";
+                        break;
+                    case "C":
+                        // the clear entry button, just sets the display back to 0, doesn't
+                        // reset any variables.
+
+                        // change the C button to AC
+                        document.getElementById("AC").style.display = 'inline';
+                        document.getElementById('C').style.display = 'none';
+
+                        // set "total" to 0
+                        document.getElementById("total").value = "0";
+                        break;
+                    case "+/-":
+                        // negation operator, just multiplies the current "total" value by -1
+                        total = parseFloat(total) * -1;
+                        document.getElementById("total").value = total;
+                        break;
+                    case "%":
+                        // percent function that mimics the mac calculator functionality
+                        if (operator === "") {
+                            // no operator was pressed, multiply by 0.01
+                            total = parseFloat(total) * 0.01;
+                            document.getElementById("total").value = total;
+                        } else {
+                            // an operator was pressed previously
+                            total = parseFloat(firstnum) * (parseFloat(total) * 0.01);
+                            document.getElementById("total").value = total;                                             
+                        }
+                        break;
+                    case "-":
+                    case "*":
+                    case "/":
+                    case "+":
+                        // the case for any operators, it just stores some values for later use
+                        operator=num;
+                        firstnum = total;
+                        updateRunningTotal(firstnum + " " +operator + " ");
+                        oper_was_last = true;
+                        break;
+                    case "=":
+                        // the actual equal value, this calculates the operation that was previously pressed.
+                        let sum = 0;
+                        
+                        // this was larry's request, when you click the equal button, any time a number
+                        // is pressed after that we should clear the running total.  This applies to any
+                        // element with the class="num" applied to it.
+                        let numkeys = document.querySelectorAll(".num");
+                        for (i=0; i<numkeys.length; i++) {
+                            numkeys[i].addEventListener('click', clearRunningTotal);
+                        }
+
+                        // actually perform the equals calculation and update the running total
+                        switch(operator) {
+                            case "+":
+                                sum = parseFloat(firstnum) + parseFloat(total);
+                                updateRunningTotal(total + " =");
+                                break;
+                            case "-":
+                                sum = parseFloat(firstnum) - parseFloat(total);
+                                updateRunningTotal(total + " =");
+                                break;
+                            case "*":
+                                sum = parseFloat(firstnum) * parseFloat(total);
+                                updateRunningTotal(total + " =");
+                                break;
+                            case "/":
+                                sum = parseFloat(firstnum) / parseFloat(total);
+                                updateRunningTotal(total + " =");
+                                break;
+                            default: 
+                                // this should never run, unless you introduce an operator 
+                                // that isn't handled like the modulus operator we discussed in class
+                                alert("invalid operation");
+                                break;
+                        }
+
+                        // push the calculation to the history array so that we can display it later
+                        updateHistory(document.getElementById('running-calc').value + " " + sum);
+
+                        // set the "total" to the actual calculation
+                        document.getElementById("total").value=sum;
+                        break;
+                    default:
+                        // this runs whenever a number or a decimal point is pressed.
+
+                        // change the AC button to just C
+                        document.getElementById("AC").style.display = 'none';
+                        document.getElementById('C').style.display = 'inline';
+
+                        // if we pressed an operator just before the current number, then we need
+                        // to treat this like a new number and not just append the number pressed
+                        // to what is displayed on the calculator.
+                        if (oper_was_last) {
+                            total = "";
+                            oper_was_last = false;
+                        }
+
+                        // check to see if there is a value in the total box
+                        // if there is a value take the existing value and append the new number
+                        if (total === "0") {
+                            total = "";
+                        }
+
+                        // convert num back to a string just so we don't accidentally add it
+                        num = String(num);
+
+                        // append the num to the "total" displayed on the calculator
+                        document.getElementById("total").value=total + num;
+                        break;
+
+                }
+
+            }
+
+            // this function updates the running-calc to mimic the windows calculator.
+            // It appends the "val" passed to the function to the current running-calc value.
+            function updateRunningTotal(val) {
+                document.getElementById("running-calc").value = document.getElementById("running-calc").value + val;
+            }
+
+            // this function clears the running total from above the main calculator display.
+            // used after the equal button is pressed.
+            function clearRunningTotal() {
+                document.getElementById('running-calc').value = "";
+
+                // we have to remove the event listener that we created or else the running total stops working
+                let numkeys = document.querySelectorAll(".num");
+                for (i=0; i<numkeys.length; i++) {
+                    numkeys[i].removeEventListener('click',clearRunningTotal);
+                }
+            }
+
+            // this function updates the history array and redraws it to the page
+            function updateHistory(latest_calc) {
+                // add the latest calc to the history_array
+                history_array.push(latest_calc);
+
+                // set the running-history to blank to clear it out
+                document.getElementById('running-history').innerHTML = "";
+
+                // print each element in the history array
+                for (var x=history_array.length-1; x >=0 ; x--) {
+                    document.getElementById('running-history').innerHTML = document.getElementById('running-history').innerHTML + history_array[x] + "<br>";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="calculator">
+            <input id="running-calc" type="text" name="running-calc" readonly="true" value=""><br>
+            <input id="total" type="text" name="calculation" readonly="true" value="0">
+            <br>
+            <button onClick="calc('AC');" id="AC" class="funcs">AC</button><button onClick="calc('C');" id="C" class="funcs">C</button><button onClick="calc('+/-');" class="funcs">+/-</button><button onClick="calc('%');" class="funcs">%</button><button class="ops" onClick="calc('/');">&divide;</button>
+            <br>
+            <button class="num" onClick="calc(7);">7</button><button class="num" onClick="calc(8);">8</button><button class="num" onClick="calc(9);">9</button><button class="ops" onClick="calc('*');">&times;</button>
+            <br>
+            <button class="num" onClick="calc(4);">4</button><button class="num" onClick="calc(5);">5</button><button class="num" onClick="calc(6);">6</button><button class="ops" onClick="calc('-');">&minus;</button>
+            <br>
+            <button class="num" onClick="calc(1);">1</button><button class="num" onClick="calc(2);">2</button><button class="num" onClick="calc(3);">3</button><button class="ops" onClick="calc('+')">+</button>
+            <br>
+            <button class="num" onClick="calc(0);" id="zero">0</button><button class="num" onClick="calc('.');">.</button><button class="ops" onClick="calc('=')">=</button>
+        </div>
+        <div id="running-history">&nbsp;</div>
+    </body>
+</html>
+   
