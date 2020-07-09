@@ -58,19 +58,25 @@ function generateTodoItem(value) {
 
     // Checkbox
     todoItemCheckbox.setAttribute('type', 'checkbox');
+    todoItemCheckbox.style.opacity = "1";
+    
 
     // Label
     todoItemLabel.innerText = value;
+    //move text to the right of the checkbox
+    todoItemLabel.style.float = 'right';
 
     // Add styles
     todoItem.appendChild(todoItemCheckbox);
     todoItem.appendChild(todoItemLabel);
+   
 
+    
     return todoItem;
 
 }
 
-
+// document.getElementById("checkbox").style.opacity = "0.75";
 
 
 
