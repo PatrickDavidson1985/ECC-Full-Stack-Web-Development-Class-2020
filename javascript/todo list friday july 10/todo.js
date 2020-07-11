@@ -4,6 +4,12 @@ console.log('In todo.js!');
 const todoState = [];
 
 // Selectors.
+/*
+var selectors = {
+    todoListElement : document.querySelector('.todoList'),
+}
+*/
+
 const addInput = document.querySelector('.add-control .form-group input.form-control');
 const addInputButton = document.querySelector('.add-control .form-group i.form-control-feedback');
 const errParagraph = document.querySelector('.err');
