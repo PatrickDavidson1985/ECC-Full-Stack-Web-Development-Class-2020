@@ -27,7 +27,7 @@
 .todo-list {
 	margin: 20px 0;
 }
-.todo-list li {
+.todo-list div {
 	background: #fff;
 	border-radius: 5px;
 	margin-bottom: 7px;
