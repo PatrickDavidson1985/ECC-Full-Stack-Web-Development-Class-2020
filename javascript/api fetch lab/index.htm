@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function()  {
+            const dive = document.getElementById('text');
+            const url = "https://en.wikipedia.org/w/api.php?action=parse&page=Application_programming_interface&format=json"
+       fetch(url)
+       .then((resp) =>{
+          return resp.json(); 
+       })
+       .then(function(data){
+           console.log(data.parse);
+           //document.getElementById('text').innerHTML = 
+           
+
+           div.innerHtml = data.parse.text['*'];
+           div.innerHtml = "text";
+
+       })
+        }
+    </script>
+</head>
+<body>
+    <!-- the text should go with in this div-->
+  <div id="text"></div>  
+</body>
+</html>

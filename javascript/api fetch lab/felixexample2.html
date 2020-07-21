@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.onload = function () {
+            const ul = document.getElementById('authors');
+            const url = "https://randomuser.me/api/?results=10&gender=female";
+
+            fetch(url)
+            .then((resp) =>{
+                //console.log(resp);
+                return resp.json();
+            })
+            .then(function(data){
+                //console.log(data);
+                let authors = data.results;
+                console.log(authors);
+
+                return authors.map(function(temp){
+                    console.log(temp)
+                    let li = document.createElement('li');
+                    // <li></li>
+
+                    let img = document.createElement('img');
+                    // <img></img>
+
+                    let span = document.createElement('span');
+                    // <span></span>
+
+                    img.src = temp.picture.medium;
+                    // <img src = "some url"></img>
+                    
+                    span.innerHTML = `${temp.name.first} ${temp.name.last}`; // temp.name.first + ' ' + temp.name.last + " is cool!";
+                    // <span> FirstName LastName</span>
+
+                    append(li,img);
+                    // <li>
+                    //      <img src = "some url"></img>   
+                    // </li>
+
+
+                    append(li, span);
+                     // <li>
+                     //      <img src = "some url"></img>   
+                     //      <span> FirstName LastName</span>
+                     // </li>
+                   
+                     append(ul, li);
+                })
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        }
+
+        function append(parent, el){
+            return parent.appendChild(el);
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Authors</h1>
+    <ul id = "authors"></ul>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            window.onload = function() {
+                
+                const url = 'https://en.wikipedia.org/w/api.php?action=parse&page=Application_programming_interface&format=json';
+                const div = document.getElementById('text');
+
+                fetch(url)
+                .then((resp) => resp.json())
+                .then(function(data){
+                    console.log(data.parse);
+
+                    // document.getElementById('text').innerHTML = data.parse.text['*'];
+                    div.innerHTML = data.parse.text['*'];
+
+                    // document.getElementById('text').innerHTML = "stuff";
+                    div.innerHTML = "stuff";
+                })
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id = "text"></div>
+
+    </body>
+</html>
