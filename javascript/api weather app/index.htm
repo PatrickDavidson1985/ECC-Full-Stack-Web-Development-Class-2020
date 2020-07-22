@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!--https://www.metaweather.com/api//**
+ * 1. Fetch meta weather data that you want to use.
+ * 2. Parse the fetched data
+ * 3. Manipulate/mold the data so that it is useable to you
+ * 4. Get that data to the ui/front-end
+ */-->
+    <script>
+ window.onload = function(){
+     const div = document.getElementById('weather');
+const url = "https://www.metaweather.com/api/location/search/?query=London"
+fetch(url)
+.then((resp)=>{
+    return resp.json();
+})
+.then (function(data){
+    console.log(data);
+    let weather = data;
+    console.log(weather);
+}
+
+)
+ }
+    </script>
+</head>
+<body>
+    <div id="weather">
+       
+    </div>
+</body>
+</html>
+
