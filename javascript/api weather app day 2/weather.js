@@ -48,18 +48,29 @@ async function renderWeatherData() {
 renderWeatherData();
 
 const createWeatherDay = function(weather) {
-    const ul = document.createElement('ul');
-    const li = document.createElement('li');
-    const span = document.createElement('span');
+    const wrapper = document.createElement('div');
+    const min = document.createElement('span');
+    const max = document.createElement('span');
+    const day = document.createElement('span');
+    const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-    ul.innerHTML = weather.min_temp
-    li.innerHTML = weather.max_temp
-    span.innerHTML = weather.weather_state_name
-    append (li, span);
-    append (ul, li);
-    
-}
+   
+    wrapper.classList.add('day-wrapper');
+    let today = new Date(weather.applicatble_date)
+        console.log(daysOfWeek[today.getDay()])
+   
+        min.innerText = parseFloat(weather.min_temp, 2);
+        max.innerText = weather.max_temp
+        day.innerText = daysOfWeek[today.getDay()];
+        
+        wrapper.appendChild(min);
+        wrapper.appendChild(max);
+        return wrapper;
+    }
 
-function append(parent, element)  {
-    return parent.appendChild.element;
-}
+
+   
+
+
+
+
