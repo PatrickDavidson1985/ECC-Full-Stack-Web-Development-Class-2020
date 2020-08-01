@@ -10,10 +10,10 @@ window.onload = function() {
     text = "";
     for (i = 0; i < create.length; i++) {
         text += "<ul>";
-        text += "<li class="list-group-item col">" + create[i].name+ "</li>";
-        text += "<li class="list-group-item col">" + create[i].username+ "</li>";
-        text += "<li class="list-group-item col">" + create[i].zipcode+ "</li>";
-        text += "<li class="list-group-item col">" + create[i].hometown+ "</li>";
+        text += "<li class='list-group-item col'>" + create[i].name+ "</li>";
+        text += "<li class='list-group-item col'>" + create[i].username+ "</li>";
+        text += "<li class='list-group-item col'>" + create[i].zipcode+ "</li>";
+        text += "<li class='list-group-item col'>" + create[i].hometown+ "</li>";
         text += "<ul><li><a onclick='remove()'>remove</a></li></ul>";
     }
     
@@ -21,3 +21,19 @@ window.onload = function() {
 }
 
 
+function add(row) {
+    
+
+     
+        text += "<ul>";
+        text += "<li class='list-group-item col'>" + row.name.value+ "</li>";
+        text += "<li class='list-group-item col'>" + row.username.value+ "</li>";
+        text += "<li class='list-group-item col'>" + row.zipcode.value+ "</li>";
+        text += "<li class='list-group-item col'>" + row.hometown.value+ "</li>";
+        text += "<ul><li><a onclick='remove()'>remove</a></li></ul>" ;
+        
+        
+    
+    
+    document.getElementById('customtable').innerHTML = text;
+}    
